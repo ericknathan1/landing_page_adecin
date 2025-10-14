@@ -1,0 +1,459 @@
+        /* Estilos Globais */
+        :root {
+            --verde-azulado: #36686a;
+            --amarelo-sol: #fcd444;
+            --branco-sujo: #F8F9FA;
+            --cinza-claro: #E9ECEF;
+            --grafite: #212529;
+            --branco: #FFFFFF;
+
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--grafite);
+            background-color: var(--branco);
+            line-height: 1.6;
+        }
+
+        /* Classes Reutilizaveis */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--verde-azulado);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--amarelo-sol);
+            color: var(--grafite);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Header e Navegação */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--verde-azulado);
+            padding: 15px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .main-header.scrolled {
+            background-color: rgba(54, 104, 106, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--branco);
+            text-decoration: none;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-nav a {
+            color: var(--branco);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--amarelo-sol);
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--branco);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        #inicio {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: var(--branco);
+            text-align: center;
+            padding-top: 70px;
+            /* Header offset */
+            background-image: linear-gradient(#cea925b4, rgba(33, 68, 70, 0.9)), url('public/church.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* Nossa Igreja */
+        #igreja {
+            background-color: var(--branco-sujo);
+        }
+
+        .igreja-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .igreja-text {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .igreja-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Nosso Pastor Section */
+        #pastor {
+            background-color: var(--cinza-claro);
+        }
+
+        .pastor-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .pastor-photo {
+            flex-shrink: 0;
+        }
+
+        .pastor-photo img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20%;
+            border: 5px solid var(--branco);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .pastor-bio h3 {
+            font-family: var(--font-heading);
+            color: var(--verde-azulado);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* Nossos Ministérios */
+        #ministerios {
+            background-color: var(--branco-sujo);
+        }
+
+        .ministerios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .ministerio-card {
+            background: var(--branco);
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid var(--cinza-claro);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ministerio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .ministerio-card .icon {
+            font-size: 3rem;
+            color: var(--amarelo-sol);
+            margin-bottom: 20px;
+        }
+
+        .ministerio-card h3 {
+            font-family: var(--font-heading);
+            color: var(--verde-azulado);
+            margin-bottom: 10px;
+        }
+
+        /* Nossas Filiais */
+        #filiais {
+            background-color: var(--branco);
+        }
+
+        .filiais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .filial-card {
+            padding: 25px;
+            border: 1px solid var(--cinza-claro);
+            border-radius: 8px;
+        }
+
+        .filial-card h3 {
+            color: var(--verde-azulado);
+            font-family: var(--font-heading);
+        }
+
+        /* Oferta Section */
+        #oferta {
+            background-color: var(--verde-azulado);
+            color: var(--branco);
+            text-align: center;
+        }
+
+        #oferta .section-title {
+            color: var(--branco);
+        }
+
+        .oferta-content p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .oferta-info {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .oferta-info div {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .oferta-info h4 {
+            font-family: var(--font-heading);
+            color: var(--amarelo-sol);
+        }
+
+        /* Localização */
+        #localizacao {
+            background-color: var(--branco-sujo);
+        }
+
+        .localizacao-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .localizacao-info {
+            flex: 1;
+        }
+
+        .localizacao-info h3 {
+            font-family: var(--font-heading);
+            color: var(--verde-azulado);
+            margin-bottom: 20px;
+        }
+
+        .localizacao-info p {
+            margin-bottom: 15px;
+        }
+
+        .map-container {
+            flex: 1.5;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: var(--verde-azulado);
+            color: var(--branco);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: var(--branco);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--amarelo-sol);
+        }
+
+        .footer-copy {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* --- Responsividade --- */
+
+        /* Tablets + Ipads */
+
+        @media(max-width: 1050px){
+            .pastor-photo img {
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        /* Celulares */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            /* Mobile Navigation */
+            .menu-toggle {
+                display: block;
+            }
+
+            .main-nav {
+                position: absolute;
+                top: 70px;
+                /* Header height */
+                right: 0;
+                width: 100%;
+                background-color: var(--verde-azulado);
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-out;
+            }
+
+            .main-nav.active {
+                max-height: 500px;
+                /* Adjust as needed */
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .main-nav li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-nav a {
+                display: block;
+                padding: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .igreja-content {
+                flex-direction: column;
+            }
+
+            .pastor-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .pastor-photo img {
+                width: 380px;
+                height: 380px;
+            }
+
+            .localizacao-content {
+                flex-direction: column;
+            }
+        }
+
+        /* Desktops */
+        @media (min-width: 769px) {
+            .igreja-content {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+            }
+
+            .igreja-text {
+                flex: 1;
+            }
+
+            .igreja-image {
+                flex: 1;
+            }
+        }
